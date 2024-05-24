@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="Courses">
+        <lightning-layout horizontal-align="spread">
+            <div>
+                <button class="slds-button slds-button_neutral" onclick={SwitchTab}>Advanced</button>
+                <button class="slds-button slds-button_brand" onclick={createCourse}>New Course +</button>
+            </div>
+        </lightning-layout>
+        <div class="course">
+            <lightning-layout multiple-rows="true">
+                <template if:true={courses}>
+                    <template for:each={courses} for:item="course" for:index="i">
+                        <lightning-layout-item key={course.Id} size="4">
+                            <c-course-tile onupdate={refresh} course={course}></c-course-tile>
+                        </lightning-layout-item>
+                    </template>
+                </template>
+                <template if:false={courses}>
+                    <p>No courses found.</p>
+                </template>
+            </lightning-layout>
+        </div>
+    </lightning-card>
+</template>

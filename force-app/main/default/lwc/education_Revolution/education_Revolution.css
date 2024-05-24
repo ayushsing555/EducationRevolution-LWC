@@ -1,0 +1,54 @@
+.home-card {
+    background-color: #f9fafb;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.welcome-message {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.feature-section {
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.feature-section-primary {
+    background-color: #ffac81; /* Primary color */
+}
+
+.feature-section-secondary {
+    background-color: #a0ced9; /* Secondary color */
+}
+
+.icon-primary,
+.icon-secondary {
+    color: #3F51B5; /* Blue shade */
+}
+
+.title-primary,
+.title-secondary {
+    margin-bottom: 15px;
+    color: #3F51B5; /* Blue shade */
+    font-weight: bold;
+}
+
+.description-primary,
+.description-secondary {
+    color: #3F51B5; /* Blue shade */
+    font-size: 1rem;
+}
+
+.get-started-button {
+    margin-top: 10px;
+    font-weight: bold;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 16px;
+}

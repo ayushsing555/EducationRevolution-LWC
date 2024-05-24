@@ -1,0 +1,87 @@
+<template>
+    <div class="slds-box slds-var-m-around_small slds-var-p-around_medium">
+        <!-- content Information -->
+        <div class="slds-grid slds-gutters slds-wrap slds-align_absolute-center">
+            <div class="slds-col slds-size_1-of-1 slds-var-m-bottom_small">
+                <template lwc:if={isUpdate}>
+                    <lightning-input
+                        value={content.Name}
+                        name="content"
+                        label="content Name"
+                        onchange={handleChange}
+                        variant="label-inline"
+                    ></lightning-input>
+                </template>
+                <template lwc:else>
+                    <p>content Name: <strong>{content.Name}</strong></p>
+                </template>
+            </div>
+
+            <div class="slds-col slds-size_1-of-1 slds-m-bottom_small">
+                <!-- <p>Total contents: <strong>{content.contents__c}</strong></p> -->
+            </div>
+        </div>
+
+        <!-- Button Controls -->
+        <div class="slds-grid slds-wrap slds-gutters slds-align_absolute-center">
+            <!-- Use columns to distribute buttons evenly -->
+            <div class="slds-col slds-size_1-of-3 slds-var-m-bottom_small">
+                    <lightning-icon
+                    onclick={changeName}
+                    data-item={content.Id}
+                    icon-name={getIcon}
+                    variant="brand"
+                ></lightning-icon>
+            </div>
+
+            <div class="slds-col slds-size_1-of-3 slds-var-m-bottom_small">
+                
+                    <lightning-icon
+                    onclick={deletecontent}
+                    data-item={content.Id}
+                    label="Delete"
+                    icon-name="action:delete"
+                ></lightning-icon>
+                
+                
+            </div>
+
+
+            <div class="slds-col slds-size_1-of-3 slds-var-m-bottom_small">
+                <lightning-button
+                    onclick={viewDetail}
+                    label="detail"
+                    variant="success"
+                ></lightning-button>
+            </div>
+
+            <div class="slds-col slds-size_1-of-3 slds-var-m-bottom_small">
+                <lightning-input
+                    type="file"
+                    accept=".pdf,.jpeg,.png,.jpg"
+                    name="file"
+                    onchange={handleChange}
+                    label="Upload File"
+                    variant="label-hidden"
+                ></lightning-input>
+            </div>
+
+
+            <div class="slds-col slds-size_1-of-3 slds-var-m-bottom_small">
+                <lightning-button
+                    label="Preview Files"
+                    variant="brand"
+                    onclick={AllPreviewFiles}
+                ></lightning-button>
+            </div>
+
+            <div class="slds-col slds-size_1-of-3 slds-var-m-bottom_small">
+                <lightning-button
+                    label="See All Files"
+                    variant="info"
+                    onclick={allFiles}
+                ></lightning-button>
+            </div>
+        </div>
+    </div>
+</template>

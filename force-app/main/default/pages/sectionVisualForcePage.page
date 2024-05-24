@@ -1,0 +1,23 @@
+<apex:page controller="visualForceSectionHandler">
+    <apex:form>
+        <apex:pageBlock title="section List">
+            <apex:pageBlockSection title="section List">
+                <apex:inputText value="{!name}"></apex:inputText>
+                <apex:commandButton action="{!filter}" value="Filter"></apex:commandButton>
+            </apex:pageBlockSection>
+            <apex:pageBlockTable value="{!sections}" var="section" id="section_list">
+                <apex:column value="{!section.Id}" headerValue="Id">
+                </apex:column>
+                <apex:column headerValue="Name">
+                    <apex:inputText value="{!SectionName[section.Id]}"></apex:inputText>
+                </apex:column>
+
+                <apex:column headerValue="delete">
+                    <apex:inputCheck box value="{!deleteSection[section.Id]}"></apex:inputCheckbox>
+                </apex:column>
+            </apex:pageBlockTable>
+            <apex:commandButton action="{!deleteSection}" value="delete" reRender="section_list"></apex:commandButton>
+            <apex:commandButton action="{!UpdateSection}" value="update" reRender="section_list"></apex:commandButton>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

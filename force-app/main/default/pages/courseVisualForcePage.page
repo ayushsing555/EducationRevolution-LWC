@@ -1,0 +1,24 @@
+
+
+<apex:page controller="visualForceCourseHandler">
+    <apex:form>
+        <apex:pageBlock title="Course List">
+            <apex:pageBlockSection title="course List">
+                <apex:inputText value="{!name}"></apex:inputText>
+                <apex:commandButton action="{!filter}" value="Filter"></apex:commandButton>
+            </apex:pageBlockSection>
+            <apex:pageBlockTable value="{!courseList}" var="course" id="course_list">
+                <apex:column value="{!course.Id}" headerValue="Id">
+                </apex:column>
+                <apex:column headerValue="Name">
+                    <apex:inputText value="{!courseName[course.Id]}"></apex:inputText>
+                </apex:column>
+                <apex:column headerValue="delete">
+                    <apex:inputCheckbox value="{!deleteCourseName[course.Id]}"></apex:inputCheckbox>
+                </apex:column>
+            </apex:pageBlockTable>
+            <apex:commandButton action="{!deletecourse}" value="delete" reRender="course_list"></apex:commandButton>
+            <apex:commandButton action="{!UpdateCourse}" value="update" reRender="topic_list"></apex:commandButton>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

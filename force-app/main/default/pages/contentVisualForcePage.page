@@ -1,0 +1,29 @@
+<apex:page controller="visualForceContentHandler">
+    <apex:form>
+        <apex:pageBlock title="content List">
+            <apex:pageBlockSection title="content List">
+                <apex:inputText value="{!name}"></apex:inputText>
+                <apex:commandButton action="{!filter}" value="Filter"></apex:commandButton>
+            </apex:pageBlockSection>
+            <apex:pageBlockTable value="{!contents}" var="content" id="content_list">
+                <apex:column value="{!content.Id}" headerValue="Id">
+                </apex:column>
+                <apex:column headerValue="Name">
+                    <apex:pageBlockSection>
+                        <apex:inputText value="{!contentName[content.Id]}"></apex:inputText>
+                        <apex:pageBlockSectionItem>
+                            <apex:inputTextarea value="{!contentDetail[content.Id]}" richText="true">
+                            </apex:inputTextarea>
+                        </apex:pageBlockSectionItem>
+                    </apex:pageBlockSection>
+                </apex:column>
+                <apex:column headerValue="delete">
+                    <apex:inputCheckbox value="{!deletecontent[content.Id]}"></apex:inputCheckbox>
+                </apex:column>
+            </apex:pageBlockTable>
+            <apex:commandButton action="{!deletecontent}" value="delete" reRender="content_list"></apex:commandButton>
+            <apex:commandButton action="{!updatecontent}" value="update" reRender="content_list"></apex:commandButton>
+            <apex:commandButton action="{!updatecontentDetail}" value="update Detail" reRender="content_list"></apex:commandButton>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

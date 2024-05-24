@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>Course Selected</masterLabel>
+    <isExposed>true</isExposed>
+    <description>Message Channel to pass Course Selected</description>
+    <lightningMessageFields>
+        <fieldName>SectionId</fieldName>
+        <description>This is the Section Id that has Info about Section</description>
+    </lightningMessageFields>
+</LightningMessageChannel>

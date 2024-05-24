@@ -1,0 +1,20 @@
+span{
+    color: red;
+    font-weight: bold;
+    
+}
+.course-header {
+    font-weight: bold;
+}
+lightning-button{
+    margin: 2px;
+}
+.scrollable-container {
+    height: 500px; /* or whatever fixed height you prefer */
+    overflow-y: auto; /* enables vertical scrolling */
+}
+
+.course{
+    height: 250px;
+    overflow-y: auto;
+}

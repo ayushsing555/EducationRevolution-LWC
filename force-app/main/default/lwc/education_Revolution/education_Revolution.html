@@ -1,0 +1,33 @@
+<template>
+    <lightning-card title="" class="home-card">
+        <div class="slds-text-heading_large slds-text-align_center">
+            <p class="welcome-message">Welcome to our learning platform! Here's what you can expect:</p>
+
+            <div class="feature-section feature-section-primary">
+                <lightning-icon icon-name="standard:person" size="large" class="icon-primary"></lightning-icon>
+                <h2 class="title-primary">For Users</h2>
+                <p class="description-primary">
+                    As a user, you gain access to a comprehensive set of features tailored to enhance your learning experience. Seamlessly share study materials, download notes, and participate in quizzes to assess your knowledge.
+                </p>
+            </div>
+
+            <div class="feature-section feature-section-secondary">
+                <lightning-icon icon-name="standard:school" size="large" class="icon-secondary"></lightning-icon>
+                <h2 class="title-secondary">For Admins</h2>
+                <p class="description-secondary">
+                    Admins wield powerful tools to manage courses, sections, topics, and quizzes effortlessly. Automation features allow admins to streamline processes, including follow-ups and reminders to keep user engagement high.
+                </p>
+            </div>
+
+            <p>Ready to get started?</p>
+        </div>
+        <div class="slds-text-align_center slds-m-top_small">
+            <lightning-button 
+                label="Getting Started"
+                variant="brand"
+                onclick={handleGettingStarted}
+                class="get-started-button"
+            ></lightning-button>
+        </div>
+    </lightning-card>
+</template>

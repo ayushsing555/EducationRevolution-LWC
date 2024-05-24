@@ -1,0 +1,23 @@
+<apex:page controller="visualForceTopicHandler">
+    <apex:form>
+        <apex:pageBlock title="Topic List">
+            <apex:pageBlockSection title="Topic List">
+                <apex:inputText value="{!name}"></apex:inputText>
+                <apex:commandButton action="{!filter}" value="Filter"></apex:commandButton>
+            </apex:pageBlockSection>
+            <apex:pageBlockTable value="{!topics}" var="topic" id="topic_list">
+                <apex:column value="{!topic.Id}" headerValue="Id">
+                </apex:column>
+                <apex:column headerValue="Name">
+                    <apex:inputText value="{!topicName[topic.Id]}"></apex:inputText>
+                </apex:column>
+
+                <apex:column headerValue="delete">
+                    <apex:inputCheckbox value="{!deletetopic[topic.Id]}"></apex:inputCheckbox>
+                </apex:column>
+            </apex:pageBlockTable>
+            <apex:commandButton action="{!deletetopic}" value="delete" reRender="topic_list"></apex:commandButton>
+            <apex:commandButton action="{!updatetopic}" value="update" reRender="topic_list"></apex:commandButton>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

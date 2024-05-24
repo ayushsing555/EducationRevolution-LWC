@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="Contents">
+        <div class="scrollable-container">
+            <lightning-layout multiple-rows="true">
+                <template if:true={Contents}>
+                    <lightning-button label="New Content +" onclick={handleNewContent} variant='brand'></lightning-button>
+                    <template lwc:if={hasContent}>
+                        <template for:each={Contents} for:item="content" for:index="i">
+                            <lightning-layout-item key={content.Id} size="12">
+                                <c-content-tile onupdate={refresh} content={content}></c-content-tile>
+                            </lightning-layout-item>
+                        </template>
+                    </template>
+                    <template lwc:else>
+                        <c-no-data-found message='No Content Found'></c-no-data-found>
+                    </template>
+                </template>
+                <template if:false={Contents}>
+                    <p>Please Select Any course,topic,section</p>
+                </template>
+            </lightning-layout>
+        </div>
+    </lightning-card>
+</template>

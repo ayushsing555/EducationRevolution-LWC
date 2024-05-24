@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="files">
+        <div class="scrollable-container">
+            <lightning-layout multiple-rows="true">
+                <template if:true={files}>
+                    <template lwc:if={hasfile}>
+                        <template for:each={files} for:item="file" for:index="i">
+                            <lightning-layout-item key={file.Id} size="2">
+                                <c-file-tile onupdate={refresh} file={file}></c-file-tile>
+                            </lightning-layout-item>
+                        </template>
+                    </template>
+                    <template lwc:else>
+                        <c-no-data-found message='No Section Found'></c-no-data-found>
+                    </template>
+                </template>
+                <template if:false={files}>
+                    <p>Please Select Any course</p>
+                </template>
+            </lightning-layout>
+        </div>
+    </lightning-card>
+</template>

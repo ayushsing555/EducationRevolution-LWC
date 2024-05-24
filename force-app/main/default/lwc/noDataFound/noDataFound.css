@@ -1,0 +1,14 @@
+.no-data {
+    text-align: center;
+    color: gray;
+    font-style: italic;
+}
+
+.no-data p {
+    margin: 0;
+    padding: 10px;
+}
+
+.no-data lightning-icon {
+    margin-right: 5px;
+}

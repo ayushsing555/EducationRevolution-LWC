@@ -1,0 +1,42 @@
+<template>
+    <lightning-card title="VisualForce">
+        <div class="slds-grid slds-wrap slds-grid_align-center">
+            <div class="slds-p-around_small">
+                <lightning-button 
+                    onclick={handleNavigate}
+                    label="Courses"
+                    name="course"
+                    variant="brand"
+                    class="custom-button"
+                ></lightning-button>
+            </div>
+            <div class="slds-p-around_small">
+                <lightning-button 
+                    onclick={handleNavigate}
+                    label="Sections"
+                    variant="brand"
+                    name="section"
+                    class="custom-button"
+                ></lightning-button>
+            </div>
+            <div class="slds-p-around_small">
+                <lightning-button 
+                    onclick={handleNavigate}
+                    label="Topics"
+                    name="topic"
+                    variant="brand"
+                    class="custom-button"
+                ></lightning-button>
+            </div>
+            <div class="slds-p-around_small">
+                <lightning-button 
+                    onclick={handleNavigate}
+                    label="content"
+                    name="content"
+                    variant="brand"
+                    class="custom-button"
+                ></lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template>

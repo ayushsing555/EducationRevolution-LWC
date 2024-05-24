@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="topics">
+        <div class="scrollable-container">
+            <lightning-layout multiple-rows="true">
+                <template if:true={topics}>
+                    <lightning-button label="New Topic +" onclick={handleNewTopic} variant='brand'></lightning-button>
+                    <template lwc:if={hastopic}>
+                        <template for:each={topics} for:item="topic" for:index="i">
+                            <lightning-layout-item key={topic.Id} size="12">
+                                <c-topic-tile onupdate={refresh} topic={topic}></c-topic-tile>
+                            </lightning-layout-item>
+                        </template>
+                    </template>
+                    <template lwc:else>
+                        <c-no-data-found message='No Section Found'></c-no-data-found>
+                    </template>
+                </template>
+                <template if:false={topics}>
+                    <p>Please Select Any course,topic,section</p>
+                </template>
+            </lightning-layout>
+        </div>
+    </lightning-card>
+</template>
